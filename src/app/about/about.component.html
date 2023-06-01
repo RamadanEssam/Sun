@@ -1,0 +1,21 @@
+<div class="Container">
+
+  <div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
+  <div *ngIf="aboutNews.length>0; else loading" class="row">
+    <div *ngFor="let n of aboutNews " class="col-md-3">
+      <img [src]="n.urlToImage" class="w-100" >
+      <h4>{{n.title}}</h4>
+      <p>{{n.description}}</p>
+      <span>{{n.content}}</span>
+
+
+    </div>
+  </div>
+
+  <ng-template #loading>
+    <h3 class="text-center py-5">
+      <i class="fa fa-spinner fa-spin " aria-hidden="true"></i>
+    </h3>
+  </ng-template>
+
+</div>

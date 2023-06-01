@@ -1,0 +1,58 @@
+<!--
+ binding
+ 1- data interpolation
+<h2>{{userName}}</h2>
+
+ 2-property binding
+<img width="300" [src]="imgSource" >
+
+3- event Binding
+<button (click)="hello()" > hi </button>
+
+
+
+
+  -->
+
+<div class="container py-4">
+  <h3 [ngClass]="
+{
+  'text-center bg-danger ':productPrice>100,
+  'text-white':userName == 'ramadan'
+}
+">
+    Home Componanat ng class ex
+
+
+  </h3>
+  <div class="container py-4">
+    <h3 [ngStyle]="
+  {
+    'color':productPrice>100?'green':'blue',
+  }
+  ">
+      Home Componanat ng style ex
+
+
+    </h3>
+  </div>
+
+
+  <h1> Home Componant </h1>
+  <h3 [style.color]="productPrice>5000?'red':'blue'">Product Price Is style binding : {{productPrice}}</h3>
+  <h3 [class.bg-danger]="productPrice>5000?'red':'blue'">Product Price Is class binding : {{productPrice}}</h3>
+  <h2>{{userName}}</h2>
+  <img width="300" [src]="imgSource">
+  <h3>{{user.name}}</h3>
+  <p>home works!</p>
+  <button (click)="hello()"> hi </button>
+
+  <app-child [userNameFromHome]="userName"></app-child>
+  <div class="container py-5 m-3"> test</div>
+
+
+  <div class="container  py-5 m-3 ">
+<h1> Two Way Binding</h1>
+    <input [(ngModel)]="userName">
+    <h3>{{userName}}</h3>
+  </div>
